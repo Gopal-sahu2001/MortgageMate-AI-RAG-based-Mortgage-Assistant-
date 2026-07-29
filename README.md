@@ -1,9 +1,8 @@
 # MortgageMate-AI-RAG-based-Mortgage-Assistant-
 Ask anything about a home loans and mortgaging to Indian banks and even talk to it live.
 
-'''
-
-                    USER
+```text
+                     USER
                       │
                       ▼
             Ask Mortgage Question
@@ -36,5 +35,34 @@ Ask anything about a home loans and mortgaging to Indian banks and even talk to 
           │                        │
           └───────────┬────────────┘
                       ▼
-        Voice Response/Genrated response in chat
-'''
+              Voice Response
+```
+#Knowledge Base Creation Workflow
+
+```text
+                Mortgage PDFs
+                (RBI, SBI, HDFC, ICICI, FAQs,
+                Home Loan Guides)
+                          │
+                          ▼
+                      PDF Extraction
+                 (PyMuPDF / pdfplumber)
+                          │
+                          ▼
+                      Text Cleaning
+                          │
+                          ▼
+                     Chunk the Text
+                 (500-1000 characters)
+                          │
+                          ▼
+                Generate Embeddings
+                (Sentence Transformers)
+                          │
+                          ▼
+                 Store in ChromaDB
+                (Vector Database)
+                          │
+                          ▼
+                     Ready for RAG
+```
