@@ -35,14 +35,14 @@ Ask anything about a home loans and mortgaging to Indian banks and even talk to 
           │                        │
           └───────────┬────────────┘
                       ▼
-              Voice Response
+        Voice Response/In chat response
 ```
 #Knowledge Base Creation Workflow
 
 ```text
-                Mortgage PDFs
-                (RBI, SBI, HDFC, ICICI, FAQs,
-                Home Loan Guides)
+                     Mortgage PDFs
+                (RBI, Major banking firms, FAQs,
+                    Home Loan Guides)
                           │
                           ▼
                       PDF Extraction
@@ -56,12 +56,12 @@ Ask anything about a home loans and mortgaging to Indian banks and even talk to 
                  (500-1000 characters)
                           │
                           ▼
-                Generate Embeddings
-                (Sentence Transformers)
+                    Generate Embeddings
+                   (Sentence Transformers)
                           │
                           ▼
-                 Store in ChromaDB
-                (Vector Database)
+                   Store in ChromaDB
+                    (Vector Database)
                           │
                           ▼
                      Ready for RAG
