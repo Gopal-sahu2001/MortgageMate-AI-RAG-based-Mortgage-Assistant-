@@ -3,85 +3,85 @@ Ask anything about a home loans and mortgaging to Indian banks and even talk to 
 #Entire project workflow
 ```text
 
-                                   ┌──────────────────────────┐
-                                   │        CUSTOMER          │
-                                   │  Web / Mobile App        │
-                                   └─────────────┬────────────┘
-                                                 │
-                                                 ▼
-                                   ┌──────────────────────────┐
-                                   │    React / Flutter UI    │
-                                   └─────────────┬────────────┘
-                                                 │ HTTPS
-                                                 ▼
-                                   ┌──────────────────────────┐
-                                   │     FastAPI Backend      │
-                                   │ Authentication           │
-                                   │ Business Logic           │
-                                   │ API Gateway              │
-                                   └─────────────┬────────────┘
-                                                 │
-                        ┌────────────────────────┼─────────────────────────┐
-                        │                        │                         │
-                        ▼                        ▼                         ▼
-              User Question              User History              Loan Database
-                        │                  PostgreSQL               PostgreSQL
-                        │
-                        ▼
-              ┌───────────────────┐
-              │   RAG Pipeline     │
-              │ (LangChain/LlamaIndex)
-              └─────────┬─────────┘
-                        │
-        ┌───────────────┼────────────────┐
-        │                                │
-        ▼                                ▼
-Embedding Model                  Prompt Builder
-(BGE-M3)                         (Context + Question)
-        │                                ▲
-        ▼                                │
-┌───────────────────┐                    │
-│  Vector Database  │────────────────────┘
-│     Qdrant        │
-└─────────┬─────────┘
-          ▲
-          │
-          │ Stores vectors
-          │
-┌─────────┴────────────────────────────────────────────┐
-│                Knowledge Base                        │
-│-----------------------------------------------------│
-│ Mortgage Policies                                   │
-│ Interest Rates                                      │
-│ Loan Eligibility                                    │
-│ Property Rules                                      │
-│ Government Schemes                                  │
-│ FAQs                                                │
-│ PDF Documents                                       │
-│ DOCX                                                │
-│ Excel                                               │
-│ Internal Manuals                                    │
-└─────────┬────────────────────────────────────────────┘
-          │
-          │
-          ▼
-Document Loader
-(PyMuPDF / Unstructured)
-
-          │
-          ▼
-Text Chunking
-(300–500 tokens)
-
-          │
-          ▼
-Embedding Generation
-(BGE-M3)
-
-          │
-          ▼
-Store Vectors
-(Qdrant)
+                                         ┌──────────────────────────┐
+                                         │        CUSTOMER          │
+                                         │  Web / Mobile App        │
+                                         └─────────────┬────────────┘
+                                                       │
+                                                       ▼
+                                         ┌──────────────────────────┐
+                                         │    React / Flutter UI    │
+                                         └─────────────┬────────────┘
+                                                       │ HTTPS
+                                                       ▼
+                                         ┌──────────────────────────┐
+                                         │     FastAPI Backend      │
+                                         │ Authentication           │
+                                         │ Business Logic           │
+                                         │ API Gateway              │
+                                         └─────────────┬────────────┘
+                                                       │
+                              ┌────────────────────────┼─────────────────────────┐
+                              │                        │                         │
+                              ▼                        ▼                         ▼
+                    User Question              User History              Loan Database
+                              │                  PostgreSQL               PostgreSQL
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │   RAG Pipeline     │
+                    │ (LangChain/LlamaIndex)
+                    └─────────┬─────────┘
+                              │
+              ┌───────────────┼────────────────┐
+              │                                │
+              ▼                                ▼
+      Embedding Model                  Prompt Builder
+      (BGE-M3)                         (Context + Question)
+              │                                ▲
+              ▼                                │
+      ┌───────────────────┐                    │
+      │  Vector Database  │────────────────────┘
+      │     Qdrant        │
+      └─────────┬─────────┘
+                ▲
+                │
+                │ Stores vectors
+                │
+      ┌─────────┴────────────────────────────────────────────┐
+      │                Knowledge Base                        │
+      │-----------------------------------------------------│
+      │ Mortgage Policies                                   │
+      │ Interest Rates                                      │
+      │ Loan Eligibility                                    │
+      │ Property Rules                                      │
+      │ Government Schemes                                  │
+      │ FAQs                                                │
+      │ PDF Documents                                       │
+      │ DOCX                                                │
+      │ Excel                                               │
+      │ Internal Manuals                                    │
+      └─────────┬────────────────────────────────────────────┘
+                │
+                │
+                ▼
+      Document Loader
+      (PyMuPDF / Unstructured)
+      
+                │
+                ▼
+      Text Chunking
+      (300–500 tokens)
+      
+                │
+                ▼
+      Embedding Generation
+      (BGE-M3)
+      
+                │
+                ▼
+      Store Vectors
+      (Qdrant)
 
 ```
 #Exact scenario
